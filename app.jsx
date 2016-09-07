@@ -12,7 +12,11 @@ class App extends React.Component {
       this.parseGetRequest = this.parseGetRequest.bind(this);
       this.parseRequestWithID = this.parseRequestWithID.bind(this);
   }
-  
+  reLoad(value){
+      const url = this.parseGetRequest(value);
+      console.log('url is', url);
+      this.getArtistID(url);
+  }
   handleChange(event){
       this.setState({value: event.target.value});  
   }
@@ -35,24 +39,26 @@ class App extends React.Component {
   }
   getArtistID(link){
       let searchedArtist = link;
-      $.get(link)
+    $.get(link)
       .then((data) => {return data.artists.items[0].id;})
       .then((artistID) => {
           const url = this.parseRequestWithID(artistID);
           $.get(url).done((data) => {
               let similarArtists = [];
-              for (let i = 0; i < 10; i++){
+              for (let i = 0; i < 6; i++){
                  //assign a variable
                  let size;
                  let pop = Math.floor(data.artists[i].popularity / 10);
                  switch(pop){
                      case 9 :
-                         
+                         size = 'XXXLG'
+                        break;
                      case 8 : 
-                        size = 'XLG'
+                        size = 'XXLG'
                         break;
                      case 7 : 
-                        
+                        size = 'XLG'
+                        break;
                     case 6 : 
                         size = 'LG';
                         break;
@@ -71,10 +77,16 @@ class App extends React.Component {
                         size = 'SM';
                         break;
                  }
-                
-                 let windowHeight = window.innerHeight;
+                 let windowHeight = parseInt(window.innerHeight);
+                 let windowWidth = parseInt(window.innerWidth);
+                //  let posx = (150)
+                //  let posy = (100)
                  let cssClasses = `${size} node ${windowHeight}`;
-                 similarArtists.push(<div className={cssClasses} id={i}><span className="bandName">{data.artists[i].name}</span></div>);
+                //  let styles = {
+                //      left: posx + 'px',
+                //      top: posy + 'px'
+                //  };
+                 similarArtists.push(<div className={cssClasses} id={i} onClick={this.reLoad.bind(this,`${data.artists[i].name}`)}><span className="bandName">{data.artists[i].name}</span></div>);
               }
                if(searchedArtist.indexOf('%20') === -1){
                      let idx = searchedArtist.indexOf('=')+1;
@@ -94,13 +106,16 @@ class App extends React.Component {
       });
   }
   render() {
-    return <div><form>
+    let windowHeight = window.innerHeight;
+    let styles = `${windowHeight} bg`
+    return <div className="bg"><form>
     <input id='formID' className='queryForm' type='text' value={this.state.value} onChange={this.handleChange}/>
     </form>
     <button onClick={this.submit}>clickme</button>
     <div>{this.state.artist}</div>
     <div>{this.state.queryArtist}</div>
     </div>
+   
   }
 
 }

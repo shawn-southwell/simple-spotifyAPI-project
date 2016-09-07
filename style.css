@@ -1,17 +1,24 @@
-body{
-    background-image: 'http://weknowyourdreams.com/images/space/space-03.jpg';
+*{
+    margin: 0;
+    padding: 0;
 }
-h2 {
-    color: green
+.bg {
+    
+    /*background-image: url('http://weknowyourdreams.com/images/space/space-03.jpg');*/
+    background-image: url('https://www.wellesleyfreelibrary.org/wp-content/uploads/2016/06/space-1.jpg');
+    height: 1500px;
+    width: 2000px;
+    
 }
 .node{
-    border: 1px solid #fafafa;
+    border: 1px solid inherit;
     border-radius: 50%;
     text-align: center;
     position: relative;
     box-shadow: none;
     display: inline-block;
     margin-top: 300px;
+    cursor: pointer;
 
 }
 .bandName{
@@ -28,7 +35,7 @@ h2 {
   height: 180px;
   border-radius: 50%;
   top: 300px;
-  left: 400px;
+  left: 600px;
   display: inline-block;
   position: absolute;
   box-shadow: 0 0 120px #f1da36, 0 0 60px #f2ad00, 0 0 10px #c96800, 0 0 200px #feff8f;
@@ -48,13 +55,34 @@ h2 {
 
 .queriedArtist{
   animation: spin 100s infinite linear; 
-}  
+} 
+.XXXLG {
+    color: green;
+    background-color: cadetblue;
+    height: 160px;
+    width: 160px;
+    animation: spin 10s infinite linear;
+    animation: spin 60s infinite linear;
+    transform-origin: 350px 40px;
+    box-shadow: 0 0 120px #0098cc, 0 0 60px #007299, 0 0 10px #004c66, 0 0 200px #002633;
+} 
+.XXLG {
+    color: green;
+    background-color: lawngreen;
+    height: 140px;
+    width: 140px;
+    animation: spin 10s infinite linear;
+    z-index: 3;
+    transform-origin: 350px 40px;
+}
 .XLG {
     color: green;
-    background-color: grey;
+    background-color: #472847;
     height: 120px;
     width: 120px;
-    animation: spin 10s infinite linear;
+    animation: spin 60s infinite linear;
+    transform-origin: 350px 40px;
+    z-index: 3;
 }
 .LG {
     color: green;
@@ -64,14 +92,25 @@ h2 {
     animation: spin 50s infinite linear;
     top: -30px;
     left: -30px;
-    transform-origin: 15px 15px; 
+    margin: 50px;
+    background: radial-gradient(center, ellipse cover, deepskyblue   
+   0%,#f1da36 100%);
+    transform-origin: 350px 40px;
+    box-shadow: 0 0 120px #0098cc, 0 0 60px #007299, 0 0 10px #004c66, 0 0 200px #002633;
 }
 .MD {
     color: white;
     background-color: crimson;
     height: 80px;
     width: 80px;
-    animation: spin 10s infinite linear;
+    right: -30px;
+    top: -30px;
+    animation: spin 90s infinite linear;
+    margin: 30px;
+    transform-origin: -200px -100px;
+    position: relative;
+    box-shadow: 0 0 120px #b01030, 0 0 60px #840c24, 0 0 10px #580818, 0 0 200px #2c040c;
+
 }
 
 .SM{
@@ -79,6 +118,8 @@ h2 {
     background-color: tomato;
     height: 60px;
     width: 60px;
+    animation: spin 50s infinite linear;
+    transform-origin: 30px 30px;
 }
 @keyframes spin {  
 from {  
