@@ -1,0 +1,90 @@
+body{
+    background-image: 'http://weknowyourdreams.com/images/space/space-03.jpg';
+}
+h2 {
+    color: green
+}
+.node{
+    border: 1px solid #fafafa;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    box-shadow: none;
+    display: inline-block;
+    margin-top: 300px;
+
+}
+.bandName{
+    top: 40%;
+    position: relative;
+}
+.queryName{
+    top: 40%;
+    position: relative;
+}
+.queriedArtist{
+    
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  top: 300px;
+  left: 400px;
+  display: inline-block;
+  position: absolute;
+  box-shadow: 0 0 120px #f1da36, 0 0 60px #f2ad00, 0 0 10px #c96800, 0 0 200px #feff8f;
+  background: radial-gradient(center, ellipse cover, #fcf3a1   
+   0%,#f1da36 100%);
+  box-shadow: 0 0 120px #f1da36, 0 0 60px #f2ad00, 0 0 10px #c96800, 0 0 200px #feff8f;
+  background: -moz-radial-gradient(center, ellipse cover, #fcf3a1 0%, #f1da36 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#fcf3a1), color-stop(100%,#f1da36)); 
+  background: -webkit-radial-gradient(center, ellipse cover, #fcf3a1 0%,#f1da36 100%);
+  background: -o-radial-gradient(center, ellipse cover, #fcf3a1 0%,#f1da36 100%); 
+  background: -ms-radial-gradient(center, ellipse cover, #fcf3a1      0%,#f1da36 100%);
+  text-align: center;
+  z-index: 2;
+    
+    
+}
+
+.queriedArtist{
+  animation: spin 100s infinite linear; 
+}  
+.XLG {
+    color: green;
+    background-color: grey;
+    height: 120px;
+    width: 120px;
+    animation: spin 10s infinite linear;
+}
+.LG {
+    color: green;
+    background-color: deepskyblue;
+    height: 100px;
+    width: 100px;
+    animation: spin 50s infinite linear;
+    top: -30px;
+    left: -30px;
+    transform-origin: 15px 15px; 
+}
+.MD {
+    color: white;
+    background-color: crimson;
+    height: 80px;
+    width: 80px;
+    animation: spin 10s infinite linear;
+}
+
+.SM{
+    color: purple;
+    background-color: tomato;
+    height: 60px;
+    width: 60px;
+}
+@keyframes spin {  
+from {  
+  transform: rotate(0deg);  
+}  
+to {  
+  transform: rotate(360deg);  
+   }  
+}
